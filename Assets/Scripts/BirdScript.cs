@@ -6,8 +6,9 @@ public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidbody2D;
     public LogicScript logicObject;
+    public AudioSource audioObject;
     public float flapStrength;
-    private bool isAlive = true;
+    public bool isAlive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isAlive)
         {
             myRigidbody2D.velocity = Vector2.up * flapStrength;
+            audioObject.Play();
         }        
     }
 
